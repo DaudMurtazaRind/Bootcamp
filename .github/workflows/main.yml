@@ -22,13 +22,13 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: Installing Node.js
-      uses: action\setup-node@v2-beta
+      uses: actions/setup-node@v2-beta
       with: 
         node-version: 14.4.0
 
     # Runs a set of commands using the runners shell
     - name: Installing Surge
-      run: npm intall -g surge
+      run: npm install -g surge
     - name: Deploying using surge
-      run: surge ./ http://erratic-burn.surge.sh/ --token $ {{ secrets.SURGE_TOKEN }}
+      run: surge ./ http://erratic-burn.surge.sh --token $ {{ secrets.SURGE_TOKEN }}
       
